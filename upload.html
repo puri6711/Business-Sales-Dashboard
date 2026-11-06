@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Dataset | Business Analytics</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <h2>📊 Business Analytics</h2>
+    <div>
+        <a href="/">Dashboard</a>
+        <a href="/forecasting">Forecasting</a>
+        <a href="/inventory">Inventory</a>
+        <a href="/payments">Payments</a>
+        <a href="/invoices">Invoices</a>
+        <a href="/reports">Reports</a>
+        <a href="/upload">Upload</a>
+    </div>
+</nav>
+
+<main class="container">
+
+    <div class="page-header">
+        <div>
+            <h1>Upload Dataset</h1>
+            <p>Upload your business sales CSV or Excel dataset.</p>
+        </div>
+    </div>
+
+    <section class="upload-box">
+
+        <h2>📁 Upload Your Business Data</h2>
+
+        <p>
+            Select a CSV or Excel file to analyze your sales,
+            profit, inventory and payment information.
+        </p>
+
+        {% if message %}
+            <p class="success">{{ message }}</p>
+        {% endif %}
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+
+        <form action="{{ url_for('upload') }}"
+              method="POST"
+              enctype="multipart/form-data">
+
+            <input
+                type="file"
+                name="file"
+                id="file"
+                accept=".csv,.xlsx,.xls"
+                required>
+
+            <p id="fileName">No file selected</p>
+
+            <button type="submit">
+                Upload Dataset
+            </button>
+
+        </form>
+
+    </section>
+
+    <section class="chart-container">
+        <h2>Required Dataset Columns</h2>
+
+        <p>Your uploaded dataset should contain these columns:</p>
+
+        <ul>
+            <li>Order ID</li>
+            <li>Invoice ID</li>
+            <li>Order Date</li>
+            <li>Customer Name</li>
+            <li>Product Name</li>
+            <li>Category</li>
+            <li>Region</li>
+            <li>Quantity</li>
+            <li>Sales</li>
+            <li>Cost</li>
+            <li>Profit</li>
+            <li>Payment Method</li>
+        </ul>
+    </section>
+
+</main>
+
+<footer>
+    <p>Business Sales Dashboard Analysis System</p>
+</footer>
+
+<script>
+const fileInput = document.getElementById("file");
+const fileName = document.getElementById("fileName");
+
+fileInput.addEventListener("change", function () {
+    if (this.files.length > 0) {
+        fileName.textContent = "Selected file: " + this.files[0].name;
+    } else {
+        fileName.textContent = "No file selected";
+    }
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,546 @@
+<!DOCTYPE html>  <html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Business Sales Dashboard</title>  
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>  <style>  
+    * {  
+        margin: 0;  
+        padding: 0;  
+        box-sizing: border-box;  
+        font-family: Arial, sans-serif;  
+    }  
+
+    body {  
+        background: #f1f5f9;  
+        color: #1e293b;  
+        padding: 25px;  
+    }  
+
+    .container {  
+        max-width: 1400px;  
+        margin: auto;  
+    }  
+
+    header {  
+        display: flex;  
+        justify-content: space-between;  
+        align-items: center;  
+        flex-wrap: wrap;  
+        gap: 15px;  
+        margin-bottom: 25px;  
+    }  
+
+    h1 { color: #172554; font-size: 28px; }  
+
+    .subtitle {  
+        color: #64748b;  
+        margin-top: 7px;  
+    }  
+
+    .nav {  
+        display: flex;  
+        flex-wrap: wrap;  
+        gap: 10px;  
+        margin-bottom: 22px;  
+    }  
+
+    .nav a {  
+        text-decoration: none;  
+        background: #172554;  
+        color: white;  
+        padding: 10px 16px;  
+        border-radius: 7px;  
+        font-size: 14px;  
+    }  
+
+    .nav a:hover { background: #2563eb; }  
+
+    .filters, .card, .chart-box, .insight-box {  
+        background: white;  
+        border-radius: 12px;  
+        padding: 20px;  
+        box-shadow: 0 3px 12px rgba(0,0,0,.05);  
+    }  
+
+    .filters {  
+        display: flex;  
+        flex-wrap: wrap;  
+        gap: 15px;  
+        align-items: end;  
+        margin-bottom: 22px;  
+    }  
+
+    .filter-group {  
+        display: flex;  
+        flex-direction: column;  
+        gap: 7px;  
+    }  
+
+    label {  
+        font-size: 13px;  
+        font-weight: bold;  
+    }  
+
+    input, select {  
+        padding: 10px;  
+        border: 1px solid #cbd5e1;  
+        border-radius: 7px;  
+        min-width: 150px;  
+    }  
+
+    button {  
+        padding: 11px 18px;  
+        background: #2563eb;  
+        color: white;  
+        border: none;  
+        border-radius: 7px;  
+        cursor: pointer;  
+    }  
+
+    button:hover { background: #1d4ed8; }  
+    .reset { background: #475569; }  
+
+    .section-title {  
+        margin: 27px 0 15px;  
+        color: #172554;  
+        font-size: 21px;  
+    }  
+
+    .kpi-grid {  
+        display: grid;  
+        grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));  
+        gap: 18px;  
+    }  
+
+    .card h3 {  
+        color: #64748b;  
+        font-size: 14px;  
+        margin-bottom: 13px;  
+    }  
+
+    .card h2 {  
+        font-size: 25px;  
+        color: #2563eb;  
+    }  
+
+    .charts {  
+        display: grid;  
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));  
+        gap: 20px;  
+    }  
+
+    .chart-box h3 {  
+        margin-bottom: 18px;  
+        font-size: 16px;  
+    }  
+
+    .chart-box canvas {  
+        width: 100% !important;  
+        max-height: 300px;  
+    }  
+
+    .insights {  
+        display: grid;  
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));  
+        gap: 18px;  
+    }  
+
+    .insight-box h3 {  
+        font-size: 14px;  
+        color: #64748b;  
+        margin-bottom: 12px;  
+    }  
+
+    .insight-box p {  
+        font-size: 19px;  
+        font-weight: bold;  
+        color: #2563eb;  
+    }  
+
+    .recommendations {  
+        background: white;  
+        padding: 22px;  
+        border-radius: 12px;  
+        margin-top: 18px;  
+        box-shadow: 0 3px 12px rgba(0,0,0,.05);  
+    }  
+
+    .recommendations h3 {  
+        margin-bottom: 15px;  
+        color: #172554;  
+    }  
+
+    .recommendations li {  
+        margin: 10px 0 10px 20px;  
+        line-height: 1.5;  
+        color: #475569;  
+    }  
+
+    #message {  
+        color: #dc2626;  
+        margin: 12px 0;  
+    }  
+
+    footer {  
+        text-align: center;  
+        color: #64748b;  
+        margin-top: 35px;  
+        font-size: 13px;  
+    }  
+
+    @media(max-width: 600px) {  
+        body { padding: 12px; }  
+        .filters { flex-direction: column; align-items: stretch; }  
+        .filter-group, input, select { width: 100%; }  
+    }  
+</style>
+
+</head>  <body>  
+<div class="container">  <header>  
+    <div>  
+        <h1>📊 Business Sales Dashboard</h1>  
+        <p class="subtitle">Business Performance and Smart Analytics System</p>  
+    </div>  
+</header>  
+
+<nav class="nav">  
+    <a href="/">Dashboard</a>  
+    <a href="/forecasting">ML Forecasting</a>  
+    <a href="/inventory">Inventory</a>  
+    <a href="/payments">Payments</a>  
+    <a href="/invoices">Invoices</a>  
+    <a href="/reports">Reports</a>  
+    <a href="/upload">Upload Dataset</a>  
+</nav>  
+
+<!-- Advanced Filters -->  
+<section class="filters">  
+
+    <div class="filter-group">  
+        <label for="startDate">Start Date</label>  
+        <input type="date" id="startDate">  
+    </div>  
+
+    <div class="filter-group">  
+        <label for="endDate">End Date</label>  
+        <input type="date" id="endDate">  
+    </div>  
+
+    <div class="filter-group">  
+        <label for="category">Category</label>  
+        <select id="category">  
+            <option value="">All Categories</option>  
+        </select>  
+    </div>  
+
+    <div class="filter-group">  
+        <label for="region">Region</label>  
+        <select id="region">  
+            <option value="">All Regions</option>  
+        </select>  
+    </div>  
+
+    <button onclick="loadDashboard()">Apply Filters</button>  
+    <button class="reset" onclick="resetFilters()">Reset</button>  
+
+</section>  
+
+<p id="message"></p>  
+
+<!-- KPI Cards -->  
+<h2 class="section-title">Business Overview</h2>  
+
+<section class="kpi-grid">  
+
+    <div class="card">  
+        <h3>Total Sales</h3>  
+        <h2 id="totalSales">₹0</h2>  
+    </div>  
+
+    <div class="card">  
+        <h3>Total Profit</h3>  
+        <h2 id="totalProfit">₹0</h2>  
+    </div>  
+
+    <div class="card">  
+        <h3>Total Orders</h3>  
+        <h2 id="totalOrders">0</h2>  
+    </div>  
+
+    <div class="card">  
+        <h3>Total Quantity</h3>  
+        <h2 id="totalQuantity">0</h2>  
+    </div>  
+
+</section>  
+
+<!-- Charts -->  
+<h2 class="section-title">Sales Analytics</h2>  
+
+<section class="charts">  
+
+    <div class="chart-box">  
+        <h3>Monthly Sales</h3>  
+        <canvas id="monthlyChart"></canvas>  
+    </div>  
+
+    <div class="chart-box">  
+        <h3>Category-wise Sales</h3>  
+        <canvas id="categoryChart"></canvas>  
+    </div>  
+
+    <div class="chart-box">  
+        <h3>Region-wise Sales</h3>  
+        <canvas id="regionChart"></canvas>  
+    </div>  
+
+</section>  
+
+<!-- Smart Business Insights -->  
+<h2 class="section-title">💡 Smart Business Insights</h2>  
+
+<section class="insights">  
+
+    <div class="insight-box">  
+        <h3>Top-selling Product</h3>  
+        <p id="topProduct">Loading...</p>  
+    </div>  
+
+    <div class="insight-box">  
+        <h3>Highest-profit Category</h3>  
+        <p id="topCategory">Loading...</p>  
+    </div>  
+
+    <div class="insight-box">  
+        <h3>Best Sales Month</h3>  
+        <p id="bestMonth">Loading...</p>  
+    </div>  
+
+</section>  
+
+<!-- Recommendations -->  
+<section class="recommendations">  
+    <h3>💡 Business Recommendations</h3>  
+    <ul id="recommendations">  
+        <li>Loading recommendations...</li>  
+    </ul>  
+</section>  
+
+<footer>  
+    Business Sales Dashboard Analysis System | Python • Flask • Pandas • Machine Learning  
+</footer>
+
+</div>  <script>  
+    let charts = {};  
+  
+    function formatMoney(value) {  
+        return "₹" + Number(value || 0).toLocaleString("en-IN", {  
+            maximumFractionDigits: 2  
+        });  
+    }  
+  
+    function updateChart(id, type, labels, values, label) {  
+        const canvas = document.getElementById(id);  
+  
+        if (charts[id]) {  
+            charts[id].destroy();  
+        }  
+  
+        charts[id] = new Chart(canvas, {  
+            type: type,  
+            data: {  
+                labels: labels,  
+                datasets: [{  
+                    label: label,  
+                    data: values,  
+                    borderWidth: 2,  
+                    tension: 0.3  
+                }]  
+            },  
+            options: {  
+                responsive: true,  
+                maintainAspectRatio: true,  
+                scales: {  
+                    y: { beginAtZero: true }  
+                }  
+            }  
+        });  
+    }  
+  
+    async function loadFilters() {  
+        try {  
+            const response = await fetch("/filter-options");  
+  
+            if (!response.ok) {  
+                throw new Error("Filter API error");  
+            }  
+  
+            const data = await response.json();  
+  
+            fillOptions("category", data.categories || [], "All Categories");  
+            fillOptions("region", data.regions || [], "All Regions");  
+  
+        } catch (error) {  
+            console.error("Filter loading error:", error);  
+        }  
+    }  
+  
+    function fillOptions(id, values, defaultText) {  
+        const select = document.getElementById(id);  
+        const currentValue = select.value;  
+  
+        select.innerHTML = "";  
+  
+        const defaultOption = document.createElement("option");  
+        defaultOption.value = "";  
+        defaultOption.textContent = defaultText;  
+        select.appendChild(defaultOption);  
+  
+        values.forEach(value => {  
+            const option = document.createElement("option");  
+            option.value = value;  
+            option.textContent = value;  
+            select.appendChild(option);  
+        });  
+  
+        select.value = currentValue;  
+    }  
+  
+    async function loadDashboard() {  
+        const params = new URLSearchParams();  
+  
+        const start = document.getElementById("startDate").value;  
+        const end = document.getElementById("endDate").value;  
+        const category = document.getElementById("category").value;  
+        const region = document.getElementById("region").value;  
+  
+        if (start) params.set("start_date", start);  
+        if (end) params.set("end_date", end);  
+        if (category) params.set("category", category);  
+        if (region) params.set("region", region);  
+  
+        try {  
+            document.getElementById("message").textContent = "";  
+  
+            const response = await fetch(  
+                "/dashboard-data?" + params.toString()  
+            );  
+  
+            if (!response.ok) {  
+                throw new Error("Dashboard API error");  
+            }  
+  
+            const data = await response.json();  
+  
+            document.getElementById("totalSales").textContent =  
+                formatMoney(data.total_sales);  
+  
+            document.getElementById("totalProfit").textContent =  
+                formatMoney(data.total_profit);  
+  
+            document.getElementById("totalOrders").textContent =  
+                Number(data.total_orders || 0).toLocaleString("en-IN");  
+  
+            document.getElementById("totalQuantity").textContent =  
+                Number(data.total_quantity || 0).toLocaleString("en-IN");  
+  
+            const monthly = data.monthly_sales || {};  
+            const categories = data.category_sales || {};  
+            const regions = data.region_sales || {};  
+  
+            updateChart(  
+                "monthlyChart",  
+                "line",  
+                Object.keys(monthly),  
+                Object.values(monthly),  
+                "Monthly Sales"  
+            );  
+  
+            updateChart(  
+                "categoryChart",  
+                "bar",  
+                Object.keys(categories),  
+                Object.values(categories),  
+                "Category Sales"  
+            );  
+  
+            updateChart(  
+                "regionChart",  
+                "bar",  
+                Object.keys(regions),  
+                Object.values(regions),  
+                "Region Sales"  
+            );  
+  
+        } catch (error) {  
+            document.getElementById("message").textContent =  
+                "Dashboard data could not load: " + error.message;  
+            console.error(error);  
+        }  
+    }  
+  
+    async function loadInsights() {  
+        try {  
+            const response = await fetch("/insights-data");  
+  
+            if (!response.ok) {  
+                throw new Error("Insights API error");  
+            }  
+  
+            const data = await response.json();  
+  
+            document.getElementById("topProduct").textContent =  
+                data.top_product || "Not available";  
+  
+            document.getElementById("topCategory").textContent =  
+                data.highest_profit_category || "Not available";  
+  
+            document.getElementById("bestMonth").textContent =  
+                data.best_sales_month || "Not available";  
+  
+            const list = document.getElementById("recommendations");  
+            list.innerHTML = "";  
+  
+            const recommendations = data.recommendations || [];  
+  
+            if (recommendations.length === 0) {  
+                list.textContent = "No recommendations available.";  
+            } else {  
+                recommendations.forEach(item => {  
+                    const li = document.createElement("li");  
+                    li.textContent = item;  
+                    list.appendChild(li);  
+                });  
+            }  
+  
+        } catch (error) {  
+            document.getElementById("topProduct").textContent = "Unavailable";  
+            document.getElementById("topCategory").textContent = "Unavailable";  
+            document.getElementById("bestMonth").textContent = "Unavailable";  
+  
+            document.getElementById("recommendations").textContent =  
+                "Recommendations could not be loaded.";  
+  
+            console.error(error);  
+        }  
+    }  
+  
+    function resetFilters() {  
+        document.getElementById("startDate").value = "";  
+        document.getElementById("endDate").value = "";  
+        document.getElementById("category").value = "";  
+        document.getElementById("region").value = "";  
+  
+        loadDashboard();  
+    }  
+  
+    async function initializeDashboard() {  
+        await loadFilters();  
+        await loadDashboard();  
+        await loadInsights();  
+    }  
+  
+    initializeDashboard();  
+</script>  </body>  
+</html>

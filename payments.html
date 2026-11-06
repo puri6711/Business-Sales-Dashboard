@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Analysis | Business Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <h2>📊 Business Analytics</h2>
+    <div>
+        <a href="/">Dashboard</a>
+        <a href="/forecasting">Forecasting</a>
+        <a href="/inventory">Inventory</a>
+        <a href="/payments">Payments</a>
+        <a href="/invoices">Invoices</a>
+        <a href="/reports">Reports</a>
+        <a href="/upload">Upload</a>
+    </div>
+</nav>
+
+<main class="container">
+
+    <div class="page-header">
+        <div>
+            <h1>💳 Payment Analysis</h1>
+            <p>Analyze payment methods and business transactions.</p>
+        </div>
+    </div>
+
+    <section class="cards">
+
+        <div class="card">
+            <h3>Total Payment Amount</h3>
+            <div class="value" id="totalSales">Loading...</div>
+        </div>
+
+        <div class="card">
+            <h3>Total Orders</h3>
+            <div class="value" id="totalOrders">Loading...</div>
+        </div>
+
+        <div class="card">
+            <h3>Payment Methods</h3>
+            <div class="value" id="paymentMethods">Loading...</div>
+        </div>
+
+    </section>
+
+    <section class="payment-section">
+
+        <h2>Payment Method Distribution</h2>
+
+        <div class="chart-container">
+            <canvas id="paymentChart"></canvas>
+        </div>
+
+        <p id="message" class="error"></p>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>Business Sales Dashboard Analysis System</p>
+</footer>
+
+<script>
+
+let paymentChartInstance = null;
+
+async function loadPayments() {
+
+    const message = document.getElementById("message");
+
+    try {
+
+        const response = await fetch("/payments-data");
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.error || "Payment API error");
+        }
+
+        // KPI VALUES
+
+        document.getElementById("totalSales").textContent =
+            "₹" + Number(data.total_sales ?? 0).toLocaleString("en-IN");
+
+        document.getElementById("totalOrders").textContent =
+            Number(data.total_orders ?? 0).toLocaleString("en-IN");
+
+        const methods = data.payment_methods || {};
+
+        const labels = Object.keys(methods);
+
+        const values = Object.values(methods).map(
+            value => Number(value) || 0
+        );
+
+        document.getElementById("paymentMethods").textContent =
+            labels.length;
+
+        // PAYMENT CHART
+
+        if (paymentChartInstance) {
+            paymentChartInstance.destroy();
+        }
+
+        paymentChartInstance = new Chart(
+            document.getElementById("paymentChart"),
+            {
+                type: "doughnut",
+
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: "Payment Amount",
+                        data: values,
+                        borderWidth: 2
+                    }]
+                },
+
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    plugins: {
+                        legend: {
+                            position: "bottom"
+                        }
+                    }
+                }
+            }
+        );
+
+        if (labels.length === 0) {
+            message.textContent =
+                "No payment information available.";
+        } else {
+            message.textContent = "";
+        }
+
+    } catch (error) {
+
+        console.error("Payment Error:", error);
+
+        message.textContent = error.message;
+
+    }
+}
+
+loadPayments();
+
+</script>
+
+</body>
+</html>

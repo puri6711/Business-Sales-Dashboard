@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Forecasting | Business Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <h2>📊 Business Analytics</h2>
+    <div>
+        <a href="/">Dashboard</a>
+        <a href="/forecasting">Forecasting</a>
+        <a href="/inventory">Inventory</a>
+        <a href="/payments">Payments</a>
+        <a href="/invoices">Invoices</a>
+        <a href="/reports">Reports</a>
+        <a href="/upload">Upload</a>
+    </div>
+</nav>
+
+<main class="container">
+
+    <div class="page-header">
+        <div>
+            <h1>ML Sales Forecasting</h1>
+            <p>Predict next-month sales using Linear Regression.</p>
+        </div>
+    </div>
+
+    <section class="cards">
+
+        <div class="card">
+            <h3>Next Month</h3>
+            <div class="value" id="nextMonth">Loading...</div>
+        </div>
+
+        <div class="card">
+            <h3>Predicted Sales</h3>
+            <div class="value" id="predictedSales">Loading...</div>
+        </div>
+
+        <div class="card">
+            <h3>MAE</h3>
+            <div class="value" id="mae">Loading...</div>
+        </div>
+
+        <div class="card">
+            <h3>RMSE</h3>
+            <div class="value" id="rmse">Loading...</div>
+        </div>
+
+    </section>
+
+    <section class="chart-grid">
+
+        <div class="chart-container">
+            <h2>Actual vs Predicted Sales</h2>
+            <canvas id="forecastChart"></canvas>
+        </div>
+
+        <div class="chart-container">
+            <h2>Historical Monthly Sales</h2>
+            <canvas id="historyChart"></canvas>
+        </div>
+
+    </section>
+
+    <p id="forecastMessage" class="error"></p>
+
+</main>
+
+<footer>
+    <p>Business Sales Dashboard Analysis System</p>
+</footer>
+
+<script>
+
+let forecastChart = null;
+let historyChart = null;
+
+async function loadForecast() {
+
+    const message = document.getElementById("forecastMessage");
+
+    try {
+
+        const response = await fetch("/forecast-data");
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.error || "Unable to load forecast data.");
+        }
+
+        document.getElementById("nextMonth").textContent =
+            data.next_month ?? "N/A";
+
+        document.getElementById("predictedSales").textContent =
+            data.predicted_sales != null
+            ? Number(data.predicted_sales).toLocaleString("en-IN", {
+                style: "currency",
+                currency: "INR",
+                maximumFractionDigits: 0
+            })
+            : "N/A";
+
+        document.getElementById("mae").textContent =
+            data.mae != null ? Number(data.mae).toFixed(2) : "N/A";
+
+        document.getElementById("rmse").textContent =
+            data.rmse != null ? Number(data.rmse).toFixed(2) : "N/A";
+
+        const labels =
+            data.actual_vs_predicted?.map(item => item.month) || [];
+
+        const actual =
+            data.actual_vs_predicted?.map(item => item.actual) || [];
+
+        const predicted =
+            data.actual_vs_predicted?.map(item => item.predicted) || [];
+
+        if (forecastChart) forecastChart.destroy();
+
+        forecastChart = new Chart(
+            document.getElementById("forecastChart"),
+            {
+                type: "line",
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: "Actual Sales",
+                            data: actual,
+                            borderWidth: 2,
+                            tension: 0.3
+                        },
+                        {
+                            label: "Predicted Sales",
+                            data: predicted,
+                            borderWidth: 2,
+                            borderDash: [6, 5],
+                            tension: 0.3
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true
+                }
+            }
+        );
+
+        if (historyChart) historyChart.destroy();
+
+        historyChart = new Chart(
+            document.getElementById("historyChart"),
+            {
+                type: "bar",
+                data: {
+                    labels: data.historical_months || [],
+                    datasets: [{
+                        label: "Monthly Sales",
+                        data: data.historical_sales || [],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true
+                }
+            }
+        );
+
+        message.textContent = "";
+
+    } catch (error) {
+
+        message.textContent = error.message;
+        console.error("Forecast Error:", error);
+
+    }
+}
+
+loadForecast();
+
+</script>
+
+</body>
+</html>

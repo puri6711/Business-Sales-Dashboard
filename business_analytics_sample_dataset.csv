@@ -1,0 +1,121 @@
+﻿Order ID,Invoice ID,Order Date,Customer Name,Product Name,Category,Region,Quantity,Sales,Cost,Profit,Payment Method
+ORD-0005,INV-0005,2025-01-04,Ishaan,Printer,Electronics,West,5,62500,47500,15000,Debit Card
+ORD-0114,INV-0114,2025-01-07,Kabir,Smartphone,Electronics,West,6,132000,99000,33000,UPI
+ORD-0107,INV-0107,2025-01-11,Tara,Office Chair,Furniture,South,4,26000,17200,8800,Credit Card
+ORD-0067,INV-0067,2025-01-13,Ishaan,Headphones,Electronics,East,7,17500,9800,7700,Cash
+ORD-0070,INV-0070,2025-01-13,Anaya,Office Chair,Furniture,West,4,26000,17200,8800,Debit Card
+ORD-0072,INV-0072,2025-01-15,Diya,Bookshelf,Furniture,East,6,45000,30600,14400,Credit Card
+ORD-0015,INV-0015,2025-01-17,Meera,Laptop,Electronics,West,4,220000,168000,52000,Debit Card
+ORD-0073,INV-0073,2025-01-20,Diya,Mouse,Electronics,Central,5,4000,1750,2250,Cash
+ORD-0064,INV-0064,2025-01-22,Rohan,Pen Pack,Stationery,East,3,360,165,195,UPI
+ORD-0010,INV-0010,2025-01-24,Anaya,Office Chair,Furniture,East,2,13000,8600,4400,UPI
+ORD-0085,INV-0085,2025-01-24,Anaya,Headphones,Electronics,West,1,2500,1400,1100,Net Banking
+ORD-0038,INV-0038,2025-01-28,Diya,Pen Pack,Stationery,North,8,960,440,520,Cash
+ORD-0047,INV-0047,2025-01-30,Arjun,Printer,Electronics,North,3,37500,28500,9000,Credit Card
+ORD-0032,INV-0032,2025-02-02,Meera,Office Chair,Furniture,North,4,26000,17200,8800,Net Banking
+ORD-0095,INV-0095,2025-02-02,Kabir,Headphones,Electronics,West,4,10000,5600,4400,Debit Card
+ORD-0034,INV-0034,2025-02-04,Aarav,Laptop,Electronics,East,4,220000,168000,52000,UPI
+ORD-0102,INV-0102,2025-02-12,Kabir,Mouse,Electronics,South,1,800,350,450,Cash
+ORD-0028,INV-0028,2025-02-13,Sana,Mouse,Electronics,North,2,1600,700,900,Net Banking
+ORD-0060,INV-0060,2025-02-17,Kabir,Desk,Furniture,East,1,9000,6200,2800,UPI
+ORD-0042,INV-0042,2025-02-17,Anaya,Bookshelf,Furniture,South,1,7500,5100,2400,Cash
+ORD-0089,INV-0089,2025-03-04,Sana,Bookshelf,Furniture,South,4,30000,20400,9600,Cash
+ORD-0061,INV-0061,2025-03-08,Rohan,Laptop,Electronics,South,6,330000,252000,78000,Cash
+ORD-0057,INV-0057,2025-03-10,Rohan,Desk,Furniture,North,2,18000,12400,5600,UPI
+ORD-0094,INV-0094,2025-03-12,Ishaan,Notebook,Stationery,South,2,160,70,90,Cash
+ORD-0019,INV-0019,2025-03-12,Arjun,Notebook,Stationery,West,4,320,140,180,UPI
+ORD-0017,INV-0017,2025-03-15,Rohan,Pen Pack,Stationery,South,8,960,440,520,Credit Card
+ORD-0020,INV-0020,2025-03-20,Ishaan,Laptop,Electronics,West,2,110000,84000,26000,Net Banking
+ORD-0025,INV-0025,2025-03-20,Meera,Desk,Furniture,South,4,36000,24800,11200,Net Banking
+ORD-0045,INV-0045,2025-03-21,Anaya,Pen Pack,Stationery,East,8,960,440,520,Credit Card
+ORD-0068,INV-0068,2025-03-23,Diya,Office Chair,Furniture,West,5,32500,21500,11000,UPI
+ORD-0091,INV-0091,2025-03-23,Sana,Bookshelf,Furniture,West,8,60000,40800,19200,Debit Card
+ORD-0088,INV-0088,2025-04-01,Arjun,Pen Pack,Stationery,West,4,480,220,260,UPI
+ORD-0069,INV-0069,2025-04-13,Sana,Printer,Electronics,East,4,50000,38000,12000,Debit Card
+ORD-0051,INV-0051,2025-04-15,Meera,Notebook,Stationery,South,5,400,175,225,Debit Card
+ORD-0030,INV-0030,2025-04-19,Arjun,Desk,Furniture,South,7,63000,43400,19600,Debit Card
+ORD-0043,INV-0043,2025-04-20,Kabir,Printer,Electronics,North,8,100000,76000,24000,Credit Card
+ORD-0006,INV-0006,2025-04-21,Meera,Desk,Furniture,North,3,27000,18600,8400,UPI
+ORD-0003,INV-0003,2025-04-30,Arjun,Smartphone,Electronics,Central,4,88000,66000,22000,UPI
+ORD-0036,INV-0036,2025-05-05,Sana,Headphones,Electronics,West,8,20000,11200,8800,Credit Card
+ORD-0087,INV-0087,2025-05-05,Ishaan,Printer,Electronics,North,7,87500,66500,21000,UPI
+ORD-0039,INV-0039,2025-05-08,Anaya,Notebook,Stationery,South,2,160,70,90,Net Banking
+ORD-0075,INV-0075,2025-05-11,Aarav,Pen Pack,Stationery,West,4,480,220,260,UPI
+ORD-0120,INV-0120,2025-05-13,Meera,Office Chair,Furniture,East,6,39000,25800,13200,Net Banking
+ORD-0103,INV-0103,2025-05-14,Kabir,Headphones,Electronics,East,1,2500,1400,1100,Credit Card
+ORD-0058,INV-0058,2025-05-20,Rohan,Bookshelf,Furniture,Central,3,22500,15300,7200,Credit Card
+ORD-0001,INV-0001,2025-05-21,Anaya,Smartphone,Electronics,South,1,22000,16500,5500,Credit Card
+ORD-0071,INV-0071,2025-05-23,Meera,Desk,Furniture,Central,2,18000,12400,5600,Cash
+ORD-0035,INV-0035,2025-05-23,Sana,Bookshelf,Furniture,South,4,30000,20400,9600,Net Banking
+ORD-0083,INV-0083,2025-05-26,Arjun,Headphones,Electronics,Central,2,5000,2800,2200,Debit Card
+ORD-0093,INV-0093,2025-05-27,Anaya,Printer,Electronics,East,2,25000,19000,6000,Debit Card
+ORD-0023,INV-0023,2025-05-31,Kabir,Notebook,Stationery,South,2,160,70,90,Cash
+ORD-0027,INV-0027,2025-06-07,Anaya,Smartphone,Electronics,North,6,132000,99000,33000,Credit Card
+ORD-0110,INV-0110,2025-06-09,Diya,Smartphone,Electronics,Central,3,66000,49500,16500,UPI
+ORD-0046,INV-0046,2025-06-10,Aarav,Laptop,Electronics,North,1,55000,42000,13000,Net Banking
+ORD-0117,INV-0117,2025-06-15,Anaya,Pen Pack,Stationery,North,5,600,275,325,Debit Card
+ORD-0078,INV-0078,2025-06-17,Kabir,Desk,Furniture,East,7,63000,43400,19600,Net Banking
+ORD-0104,INV-0104,2025-06-22,Kabir,Printer,Electronics,East,6,75000,57000,18000,Cash
+ORD-0113,INV-0113,2025-06-27,Arjun,Mouse,Electronics,West,1,800,350,450,Debit Card
+ORD-0012,INV-0012,2025-07-01,Anaya,Headphones,Electronics,East,6,15000,8400,6600,UPI
+ORD-0007,INV-0007,2025-07-03,Meera,Pen Pack,Stationery,Central,2,240,110,130,Debit Card
+ORD-0076,INV-0076,2025-07-06,Kabir,Bookshelf,Furniture,North,4,30000,20400,9600,Debit Card
+ORD-0109,INV-0109,2025-07-08,Ishaan,Printer,Electronics,Central,5,62500,47500,15000,Net Banking
+ORD-0063,INV-0063,2025-07-09,Tara,Headphones,Electronics,Central,1,2500,1400,1100,Credit Card
+ORD-0055,INV-0055,2025-07-09,Rohan,Smartphone,Electronics,South,4,88000,66000,22000,Cash
+ORD-0011,INV-0011,2025-07-14,Rohan,Office Chair,Furniture,West,2,13000,8600,4400,Debit Card
+ORD-0021,INV-0021,2025-07-15,Tara,Smartphone,Electronics,West,7,154000,115500,38500,Net Banking
+ORD-0100,INV-0100,2025-07-19,Meera,Printer,Electronics,West,1,12500,9500,3000,Credit Card
+ORD-0098,INV-0098,2025-07-19,Kabir,Notebook,Stationery,Central,5,400,175,225,Net Banking
+ORD-0044,INV-0044,2025-07-19,Rohan,Pen Pack,Stationery,West,1,120,55,65,Debit Card
+ORD-0111,INV-0111,2025-07-23,Anaya,Desk,Furniture,North,7,63000,43400,19600,Net Banking
+ORD-0080,INV-0080,2025-07-27,Arjun,Mouse,Electronics,North,5,4000,1750,2250,Debit Card
+ORD-0086,INV-0086,2025-08-01,Tara,Smartphone,Electronics,South,8,176000,132000,44000,Cash
+ORD-0096,INV-0096,2025-08-01,Aarav,Bookshelf,Furniture,South,8,60000,40800,19200,Cash
+ORD-0079,INV-0079,2025-08-04,Kabir,Headphones,Electronics,South,4,10000,5600,4400,Net Banking
+ORD-0040,INV-0040,2025-08-05,Ishaan,Printer,Electronics,East,3,37500,28500,9000,Cash
+ORD-0081,INV-0081,2025-08-09,Tara,Desk,Furniture,Central,4,36000,24800,11200,Debit Card
+ORD-0074,INV-0074,2025-08-12,Tara,Notebook,Stationery,Central,6,480,210,270,UPI
+ORD-0031,INV-0031,2025-08-13,Arjun,Pen Pack,Stationery,West,6,720,330,390,UPI
+ORD-0041,INV-0041,2025-08-15,Arjun,Office Chair,Furniture,North,2,13000,8600,4400,UPI
+ORD-0082,INV-0082,2025-08-15,Anaya,Printer,Electronics,Central,8,100000,76000,24000,Cash
+ORD-0090,INV-0090,2025-08-15,Tara,Bookshelf,Furniture,Central,6,45000,30600,14400,Cash
+ORD-0053,INV-0053,2025-08-23,Tara,Smartphone,Electronics,Central,1,22000,16500,5500,UPI
+ORD-0118,INV-0118,2025-08-26,Tara,Printer,Electronics,Central,4,50000,38000,12000,Cash
+ORD-0105,INV-0105,2025-08-29,Aarav,Desk,Furniture,Central,2,18000,12400,5600,UPI
+ORD-0099,INV-0099,2025-09-07,Anaya,Mouse,Electronics,East,4,3200,1400,1800,Cash
+ORD-0119,INV-0119,2025-09-11,Meera,Notebook,Stationery,South,1,80,35,45,Cash
+ORD-0024,INV-0024,2025-09-14,Ishaan,Laptop,Electronics,Central,5,275000,210000,65000,UPI
+ORD-0054,INV-0054,2025-09-17,Rohan,Smartphone,Electronics,South,4,88000,66000,22000,Debit Card
+ORD-0092,INV-0092,2025-09-24,Sana,Office Chair,Furniture,South,5,32500,21500,11000,Debit Card
+ORD-0013,INV-0013,2025-10-01,Anaya,Mouse,Electronics,South,3,2400,1050,1350,Cash
+ORD-0008,INV-0008,2025-10-02,Diya,Laptop,Electronics,West,8,440000,336000,104000,UPI
+ORD-0062,INV-0062,2025-10-15,Aarav,Bookshelf,Furniture,North,7,52500,35700,16800,UPI
+ORD-0016,INV-0016,2025-10-18,Meera,Smartphone,Electronics,South,4,88000,66000,22000,Cash
+ORD-0097,INV-0097,2025-10-22,Kabir,Pen Pack,Stationery,West,1,120,55,65,UPI
+ORD-0049,INV-0049,2025-10-24,Tara,Mouse,Electronics,North,4,3200,1400,1800,Net Banking
+ORD-0018,INV-0018,2025-10-27,Kabir,Bookshelf,Furniture,Central,5,37500,25500,12000,Cash
+ORD-0033,INV-0033,2025-10-29,Anaya,Bookshelf,Furniture,North,4,30000,20400,9600,UPI
+ORD-0002,INV-0002,2025-10-30,Kabir,Smartphone,Electronics,North,2,44000,33000,11000,UPI
+ORD-0026,INV-0026,2025-11-03,Meera,Bookshelf,Furniture,West,1,7500,5100,2400,UPI
+ORD-0056,INV-0056,2025-11-10,Arjun,Bookshelf,Furniture,North,5,37500,25500,12000,Net Banking
+ORD-0116,INV-0116,2025-11-12,Arjun,Headphones,Electronics,West,5,12500,7000,5500,Cash
+ORD-0066,INV-0066,2025-11-14,Ishaan,Bookshelf,Furniture,South,7,52500,35700,16800,Credit Card
+ORD-0101,INV-0101,2025-11-15,Arjun,Printer,Electronics,North,3,37500,28500,9000,Cash
+ORD-0009,INV-0009,2025-11-18,Tara,Bookshelf,Furniture,East,5,37500,25500,12000,Net Banking
+ORD-0115,INV-0115,2025-11-22,Sana,Pen Pack,Stationery,South,6,720,330,390,Cash
+ORD-0014,INV-0014,2025-11-24,Arjun,Pen Pack,Stationery,South,5,600,275,325,Debit Card
+ORD-0004,INV-0004,2025-11-29,Arjun,Bookshelf,Furniture,West,4,30000,20400,9600,Credit Card
+ORD-0106,INV-0106,2025-11-29,Diya,Notebook,Stationery,North,4,320,140,180,UPI
+ORD-0050,INV-0050,2025-12-03,Tara,Smartphone,Electronics,Central,7,154000,115500,38500,Net Banking
+ORD-0037,INV-0037,2025-12-04,Kabir,Smartphone,Electronics,East,2,44000,33000,11000,Cash
+ORD-0029,INV-0029,2025-12-04,Sana,Headphones,Electronics,Central,3,7500,4200,3300,Credit Card
+ORD-0077,INV-0077,2025-12-06,Diya,Mouse,Electronics,East,6,4800,2100,2700,Net Banking
+ORD-0108,INV-0108,2025-12-09,Diya,Headphones,Electronics,Central,8,20000,11200,8800,Credit Card
+ORD-0052,INV-0052,2025-12-10,Rohan,Pen Pack,Stationery,West,3,360,165,195,Debit Card
+ORD-0084,INV-0084,2025-12-11,Rohan,Smartphone,Electronics,South,4,88000,66000,22000,Credit Card
+ORD-0048,INV-0048,2025-12-12,Anaya,Smartphone,Electronics,West,2,44000,33000,11000,UPI
+ORD-0022,INV-0022,2025-12-15,Diya,Desk,Furniture,Central,1,9000,6200,2800,Debit Card
+ORD-0065,INV-0065,2025-12-16,Anaya,Notebook,Stationery,North,4,320,140,180,Debit Card
+ORD-0059,INV-0059,2025-12-18,Rohan,Notebook,Stationery,Central,4,320,140,180,Cash
+ORD-0112,INV-0112,2025-12-23,Rohan,Office Chair,Furniture,Central,2,13000,8600,4400,UPI

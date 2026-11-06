@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Management | Business Analytics</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <h2>📊 Business Analytics</h2>
+    <div>
+        <a href="/">Dashboard</a>
+        <a href="/upload">Upload</a>
+        <a href="/forecasting">Forecasting</a>
+        <a href="/inventory">Inventory</a>
+        <a href="/payments">Payments</a>
+        <a href="/invoices">Invoices</a>
+        <a href="/reports">Reports</a>
+    </div>
+</nav>
+
+<main class="container">
+
+    <div class="page-header">
+        <div>
+            <h1>Invoice Management</h1>
+            <p>View and manage your business sales invoices.</p>
+        </div>
+    </div>
+
+    <section class="cards">
+
+        <div class="card">
+            <h3>Total Invoices</h3>
+            <h2 id="totalInvoices">0</h2>
+        </div>
+
+        <div class="card">
+            <h3>Total Invoice Amount</h3>
+            <h2 id="totalAmount">₹0</h2>
+        </div>
+
+    </section>
+
+    <section class="chart-container">
+        <h2>Invoice Details</h2>
+
+        <div id="message" class="message"></div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Invoice ID</th>
+                        <th>Order ID</th>
+                        <th>Customer Name</th>
+                        <th>Invoice Amount</th>
+                    </tr>
+                </thead>
+
+                <tbody id="invoiceTable">
+                    <tr>
+                        <td colspan="4">Loading invoice details...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>Business Sales Dashboard Analysis System</p>
+</footer>
+
+<script>
+async function loadInvoices() {
+    const table = document.getElementById("invoiceTable");
+    const message = document.getElementById("message");
+
+    try {
+        const response = await fetch("/invoices-data");
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.error || "Unable to load invoices.");
+        }
+
+        document.getElementById("totalInvoices").textContent =
+            data.total_invoices ?? 0;
+
+        document.getElementById("totalAmount").textContent =
+            "₹" + Number(data.total_amount || 0).toLocaleString("en-IN", {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            });
+
+        table.innerHTML = "";
+
+        if (!data.invoices || data.invoices.length === 0) {
+            table.innerHTML =
+                '<tr><td colspan="4">No invoice records found.</td></tr>';
+            return;
+        }
+
+        data.invoices.forEach(invoice => {
+            const row = document.createElement("tr");
+
+            const values = [
+                invoice.invoice_id,
+                invoice.order_id,
+                invoice.customer_name,
+                "₹" + Number(invoice.invoice_amount || 0).toLocaleString("en-IN", {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2
+                })
+            ];
+
+            values.forEach(value => {
+                const cell = document.createElement("td");
+                cell.textContent = value ?? "-";
+                row.appendChild(cell);
+            });
+
+            table.appendChild(row);
+        });
+
+    } catch (error) {
+        table.innerHTML =
+            '<tr><td colspan="4">Unable to load invoice details.</td></tr>';
+        message.textContent = error.message;
+    }
+}
+
+loadInvoices();
+</script>
+
+</body>
+</html>

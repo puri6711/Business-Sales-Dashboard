@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Reports | Business Analytics</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <h2>📊 Business Analytics</h2>
+    <div>
+        <a href="/">Dashboard</a>
+        <a href="/upload">Upload</a>
+        <a href="/forecasting">Forecasting</a>
+        <a href="/inventory">Inventory</a>
+        <a href="/payments">Payments</a>
+        <a href="/invoices">Invoices</a>
+        <a href="/reports">Reports</a>
+    </div>
+</nav>
+
+<main class="container">
+
+    <div class="page-header">
+        <div>
+            <h1>Business Reports</h1>
+            <p>View your overall business sales and profit performance.</p>
+        </div>
+    </div>
+
+    <section class="cards">
+
+        <div class="card">
+            <h3>Total Sales</h3>
+            <h2 id="totalSales">₹0</h2>
+        </div>
+
+        <div class="card">
+            <h3>Total Profit</h3>
+            <h2 id="totalProfit">₹0</h2>
+        </div>
+
+        <div class="card">
+            <h3>Total Orders</h3>
+            <h2 id="totalOrders">0</h2>
+        </div>
+
+        <div class="card">
+            <h3>Total Quantity</h3>
+            <h2 id="totalQuantity">0</h2>
+        </div>
+
+    </section>
+
+    <section class="chart-container">
+        <h2>Monthly Sales and Profit Report</h2>
+        <p id="message" class="message"></p>
+
+        <canvas id="reportChart"></canvas>
+    </section>
+
+    <section class="chart-container">
+        <h2>Monthly Business Report</h2>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Total Sales</th>
+                        <th>Total Profit</th>
+                    </tr>
+                </thead>
+
+                <tbody id="reportTable">
+                    <tr>
+                        <td colspan="3">Loading report...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>Business Sales Dashboard Analysis System</p>
+</footer>
+
+<script>
+let reportChart = null;
+
+async function loadReport() {
+    const table = document.getElementById("reportTable");
+    const message = document.getElementById("message");
+
+    try {
+        const response = await fetch("/report-data");
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.error || "Unable to load report data.");
+        }
+
+        const formatAmount = value =>
+            "₹" + Number(value || 0).toLocaleString("en-IN", {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            });
+
+        document.getElementById("totalSales").textContent =
+            formatAmount(data.total_sales);
+
+        document.getElementById("totalProfit").textContent =
+            formatAmount(data.total_profit);
+
+        document.getElementById("totalOrders").textContent =
+            Number(data.total_orders || 0).toLocaleString("en-IN");
+
+        document.getElementById("totalQuantity").textContent =
+            Number(data.total_quantity || 0).toLocaleString("en-IN");
+
+        const monthlyData = data.monthly_report || [];
+
+        table.innerHTML = "";
+
+        if (monthlyData.length === 0) {
+            table.innerHTML =
+                '<tr><td colspan="3">No monthly report available.</td></tr>';
+            message.textContent = "No report records found.";
+            return;
+        }
+
+        monthlyData.forEach(item => {
+            const row = document.createElement("tr");
+
+            [
+                item.month,
+                formatAmount(item.total_sales),
+                formatAmount(item.total_profit)
+            ].forEach(value => {
+                const cell = document.createElement("td");
+                cell.textContent = value ?? "-";
+                row.appendChild(cell);
+            });
+
+            table.appendChild(row);
+        });
+
+        const ctx = document.getElementById("reportChart");
+
+        if (reportChart) {
+            reportChart.destroy();
+        }
+
+        reportChart = new Chart(ctx, {
+            type: "bar",
+            data: {
+                labels: monthlyData.map(item => item.month),
+                datasets: [
+                    {
+                        label: "Monthly Sales",
+                        data: monthlyData.map(item =>
+                            Number(item.total_sales || 0)
+                        ),
+                        backgroundColor: "#4f46e5",
+                        borderRadius: 6
+                    },
+                    {
+                        label: "Monthly Profit",
+                        data: monthlyData.map(item =>
+                            Number(item.total_profit || 0)
+                        ),
+                        backgroundColor: "#06b6d4",
+                        borderRadius: 6
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        position: "top"
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: value => "₹" +
+                                Number(value).toLocaleString("en-IN")
+                        }
+                    }
+                }
+            }
+        });
+
+    } catch (error) {
+        table.innerHTML =
+            '<tr><td colspan="3">Unable to load report.</td></tr>';
+        message.textContent = error.message;
+    }
+}
+
+loadReport();
+</script>
+
+</body>
+</html>

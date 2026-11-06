@@ -1,0 +1,151 @@
+﻿Order ID,Invoice ID,Order Date,Customer Name,Product Name,Category,Region,Quantity,Sales,Cost,Profit,Payment Method
+ORD0001,INV0001,2025-05-21,Anjali,Curd 500g,Dairy,Secunderabad,2,76.0,58,18.0,Cash
+ORD0002,INV0002,2025-02-14,Kiran,Detergent 1kg,Household,Miyapur,2,207.0,176,31.0,Cash
+ORD0003,INV0003,2025-04-30,Sneha,Rice 5kg,Grocery,Bowenpally,2,640.0,550,90.0,Cash
+ORD0004,INV0004,2025-08-03,Anjali,Chips Pack,Snacks,Miyapur,4,72.0,48,24.0,Card
+ORD0005,INV0005,2025-08-05,Arjun,Bath Soap,Personal Care,Kukatpally,1,38.0,27,11.0,Cash
+ORD0006,INV0006,2025-02-17,Divya,Wheat Flour 5kg,Grocery,Hyderabad,6,1260.0,1080,180.0,UPI
+ORD0007,INV0007,2025-05-16,Rahul,Coffee 100g,Beverages,Miyapur,6,513.0,444,69.0,Card
+ORD0008,INV0008,2025-10-10,Kavya,Sunflower Oil 1L,Grocery,Bowenpally,7,1015.0,854,161.0,UPI
+ORD0009,INV0009,2025-01-24,Anjali,Milk 1L,Dairy,Kukatpally,4,248.0,204,44.0,Cash
+ORD0010,INV0010,2025-07-14,Kavya,Coffee 100g,Beverages,Miyapur,4,380.0,296,84.0,Card
+ORD0011,INV0011,2025-07-09,Arjun,Coffee 100g,Beverages,Secunderabad,6,570.0,444,126.0,Card
+ORD0012,INV0012,2025-03-29,Sneha,Bath Soap,Personal Care,Secunderabad,2,68.4,54,14.4,Cash
+ORD0013,INV0013,2025-10-13,Anjali,Biscuits Pack,Snacks,Kukatpally,7,140.0,91,49.0,Cash
+ORD0014,INV0014,2025-07-25,Kavya,Wheat Flour 5kg,Grocery,Hyderabad,1,210.0,180,30.0,Cash
+ORD0015,INV0015,2025-09-13,Divya,Eggs 12 Pack,Dairy,Miyapur,6,468.0,390,78.0,Cash
+ORD0016,INV0016,2025-10-15,Sneha,Bath Soap,Personal Care,Kukatpally,3,114.0,81,33.0,Card
+ORD0017,INV0017,2025-07-24,Arjun,Milk 1L,Dairy,Secunderabad,7,390.6,357,33.6,Cash
+ORD0018,INV0018,2025-01-25,Priya,Chips Pack,Snacks,Secunderabad,8,160.0,96,64.0,Card
+ORD0019,INV0019,2025-02-02,Divya,Sugar 1kg,Grocery,Miyapur,7,302.4,287,15.4,Card
+ORD0020,INV0020,2025-01-06,Priya,Biscuits Pack,Snacks,Bowenpally,5,90.0,65,25.0,UPI
+ORD0021,INV0021,2025-05-31,Divya,Tea Powder 250g,Beverages,Secunderabad,6,810.0,648,162.0,UPI
+ORD0022,INV0022,2025-04-02,Sneha,Rice 5kg,Grocery,Hyderabad,5,1440.0,1375,65.0,Card
+ORD0023,INV0023,2025-07-11,Suresh,Bath Soap,Personal Care,Bowenpally,4,152.0,108,44.0,Card
+ORD0024,INV0024,2025-06-15,Ramesh,Eggs 12 Pack,Dairy,Hyderabad,1,70.2,65,5.2,Cash
+ORD0025,INV0025,2025-05-03,Rahul,Eggs 12 Pack,Dairy,Secunderabad,6,468.0,390,78.0,Card
+ORD0026,INV0026,2025-02-05,Sneha,Sunflower Oil 1L,Grocery,Secunderabad,2,275.5,244,31.5,Cash
+ORD0027,INV0027,2025-03-26,Kavya,Curd 500g,Dairy,Bowenpally,8,273.6,232,41.6,Card
+ORD0028,INV0028,2025-04-13,Kavya,Toothpaste,Personal Care,Miyapur,4,306.0,252,54.0,Card
+ORD0029,INV0029,2025-09-22,Ramesh,Curd 500g,Dairy,Hyderabad,6,216.6,174,42.6,Cash
+ORD0030,INV0030,2025-01-11,Kiran,Wheat Flour 5kg,Grocery,Bowenpally,2,420.0,360,60.0,Cash
+ORD0031,INV0031,2025-02-06,Rahul,Milk 1L,Dairy,Secunderabad,4,248.0,204,44.0,Cash
+ORD0032,INV0032,2025-02-06,Sneha,Eggs 12 Pack,Dairy,Secunderabad,1,78.0,65,13.0,UPI
+ORD0033,INV0033,2025-10-04,Suresh,Curd 500g,Dairy,Bowenpally,8,304.0,232,72.0,Card
+ORD0034,INV0034,2025-07-28,Anjali,Biscuits Pack,Snacks,Hyderabad,4,76.0,52,24.0,Cash
+ORD0035,INV0035,2025-08-05,Divya,Curd 500g,Dairy,Miyapur,7,266.0,203,63.0,Card
+ORD0036,INV0036,2025-07-26,Arjun,Rice 5kg,Grocery,Hyderabad,2,640.0,550,90.0,Cash
+ORD0037,INV0037,2025-08-18,Suresh,Wheat Flour 5kg,Grocery,Miyapur,4,756.0,720,36.0,Cash
+ORD0038,INV0038,2025-02-08,Ramesh,Bath Soap,Personal Care,Bowenpally,8,304.0,216,88.0,Cash
+ORD0039,INV0039,2025-05-02,Suresh,Rice 5kg,Grocery,Miyapur,1,320.0,275,45.0,UPI
+ORD0040,INV0040,2025-01-31,Suresh,Biscuits Pack,Snacks,Miyapur,4,76.0,52,24.0,Cash
+ORD0041,INV0041,2025-05-27,Divya,Toothpaste,Personal Care,Bowenpally,5,403.75,315,88.75,Card
+ORD0042,INV0042,2025-04-08,Kavya,Detergent 1kg,Household,Secunderabad,8,920.0,704,216.0,Cash
+ORD0043,INV0043,2025-01-30,Rahul,Milk 1L,Dairy,Bowenpally,1,62.0,51,11.0,UPI
+ORD0044,INV0044,2025-09-18,Priya,Chips Pack,Snacks,Secunderabad,3,60.0,36,24.0,Cash
+ORD0045,INV0045,2025-07-26,Priya,Milk 1L,Dairy,Bowenpally,2,124.0,102,22.0,Cash
+ORD0046,INV0046,2025-02-11,Divya,Milk 1L,Dairy,Bowenpally,1,55.8,51,4.8,Card
+ORD0047,INV0047,2025-04-15,Arjun,Chips Pack,Snacks,Secunderabad,6,120.0,72,48.0,UPI
+ORD0048,INV0048,2025-08-23,Arjun,Toothpaste,Personal Care,Hyderabad,3,255.0,189,66.0,Cash
+ORD0049,INV0049,2025-10-03,Anjali,Biscuits Pack,Snacks,Bowenpally,2,40.0,26,14.0,UPI
+ORD0050,INV0050,2025-05-06,Arjun,Sugar 1kg,Grocery,Kukatpally,6,288.0,246,42.0,Cash
+ORD0051,INV0051,2025-09-28,Rahul,Biscuits Pack,Snacks,Bowenpally,5,90.0,65,25.0,UPI
+ORD0052,INV0052,2025-05-16,Priya,Eggs 12 Pack,Dairy,Hyderabad,2,156.0,130,26.0,Card
+ORD0053,INV0053,2025-05-25,Kiran,Chips Pack,Snacks,Secunderabad,3,60.0,36,24.0,Card
+ORD0054,INV0054,2025-09-16,Ramesh,Shampoo 180ml,Personal Care,Kukatpally,4,500.0,384,116.0,Cash
+ORD0055,INV0055,2025-01-23,Rahul,Sunflower Oil 1L,Grocery,Kukatpally,7,1015.0,854,161.0,Cash
+ORD0056,INV0056,2025-08-15,Sneha,Curd 500g,Dairy,Miyapur,5,190.0,145,45.0,Card
+ORD0057,INV0057,2025-03-18,Sneha,Rice 5kg,Grocery,Hyderabad,2,640.0,550,90.0,UPI
+ORD0058,INV0058,2025-03-07,Rahul,Milk 1L,Dairy,Kukatpally,3,176.7,153,23.7,UPI
+ORD0059,INV0059,2025-04-18,Anjali,Eggs 12 Pack,Dairy,Hyderabad,1,78.0,65,13.0,UPI
+ORD0060,INV0060,2025-03-21,Anjali,Tea Powder 250g,Beverages,Secunderabad,7,850.5,756,94.5,Cash
+ORD0061,INV0061,2025-04-02,Arjun,Eggs 12 Pack,Dairy,Miyapur,7,546.0,455,91.0,Card
+ORD0062,INV0062,2025-03-23,Priya,Coffee 100g,Beverages,Miyapur,4,380.0,296,84.0,Cash
+ORD0063,INV0063,2025-04-13,Ramesh,Coffee 100g,Beverages,Kukatpally,8,760.0,592,168.0,UPI
+ORD0064,INV0064,2025-01-13,Anjali,Coffee 100g,Beverages,Miyapur,4,380.0,296,84.0,UPI
+ORD0065,INV0065,2025-06-29,Sneha,Bath Soap,Personal Care,Miyapur,2,76.0,54,22.0,Card
+ORD0066,INV0066,2025-03-01,Kavya,Coffee 100g,Beverages,Secunderabad,6,570.0,444,126.0,Card
+ORD0067,INV0067,2025-08-11,Arjun,Bath Soap,Personal Care,Kukatpally,1,38.0,27,11.0,UPI
+ORD0068,INV0068,2025-10-23,Anjali,Milk 1L,Dairy,Kukatpally,2,117.8,102,15.8,Cash
+ORD0069,INV0069,2025-09-24,Sneha,Detergent 1kg,Household,Secunderabad,7,805.0,616,189.0,UPI
+ORD0070,INV0070,2025-06-10,Priya,Toothpaste,Personal Care,Kukatpally,2,170.0,126,44.0,Card
+ORD0071,INV0071,2025-07-26,Kavya,Bath Soap,Personal Care,Bowenpally,7,266.0,189,77.0,Cash
+ORD0072,INV0072,2025-03-31,Kiran,Wheat Flour 5kg,Grocery,Bowenpally,7,1396.5,1260,136.5,UPI
+ORD0073,INV0073,2025-05-27,Anjali,Toothpaste,Personal Care,Miyapur,1,85.0,63,22.0,Card
+ORD0074,INV0074,2025-08-15,Ramesh,Milk 1L,Dairy,Secunderabad,6,353.4,306,47.4,Card
+ORD0075,INV0075,2025-05-26,Sneha,Biscuits Pack,Snacks,Bowenpally,3,60.0,39,21.0,UPI
+ORD0076,INV0076,2025-04-26,Anjali,Sunflower Oil 1L,Grocery,Secunderabad,4,580.0,488,92.0,Cash
+ORD0077,INV0077,2025-02-07,Ramesh,Rice 5kg,Grocery,Miyapur,4,1216.0,1100,116.0,Card
+ORD0078,INV0078,2025-09-11,Divya,Milk 1L,Dairy,Secunderabad,4,235.6,204,31.6,Cash
+ORD0079,INV0079,2025-08-06,Anjali,Curd 500g,Dairy,Secunderabad,1,38.0,29,9.0,Card
+ORD0080,INV0080,2025-10-13,Anjali,Chips Pack,Snacks,Hyderabad,8,160.0,96,64.0,UPI
+ORD0081,INV0081,2025-10-14,Kiran,Sugar 1kg,Grocery,Kukatpally,8,345.6,328,17.6,UPI
+ORD0082,INV0082,2025-08-17,Suresh,Milk 1L,Dairy,Miyapur,7,390.6,357,33.6,UPI
+ORD0083,INV0083,2025-09-24,Ramesh,Bath Soap,Personal Care,Secunderabad,4,152.0,108,44.0,UPI
+ORD0084,INV0084,2025-05-01,Kavya,Biscuits Pack,Snacks,Kukatpally,2,40.0,26,14.0,UPI
+ORD0085,INV0085,2025-03-19,Anjali,Eggs 12 Pack,Dairy,Miyapur,2,156.0,130,26.0,Card
+ORD0086,INV0086,2025-08-01,Divya,Sugar 1kg,Grocery,Kukatpally,4,192.0,164,28.0,Card
+ORD0087,INV0087,2025-04-16,Divya,Biscuits Pack,Snacks,Miyapur,7,140.0,91,49.0,Card
+ORD0088,INV0088,2025-07-14,Ramesh,Detergent 1kg,Household,Hyderabad,1,103.5,88,15.5,UPI
+ORD0089,INV0089,2025-10-03,Sneha,Bath Soap,Personal Care,Bowenpally,7,252.7,189,63.7,Cash
+ORD0090,INV0090,2025-08-12,Ramesh,Biscuits Pack,Snacks,Hyderabad,4,80.0,52,28.0,UPI
+ORD0091,INV0091,2025-08-28,Suresh,Shampoo 180ml,Personal Care,Bowenpally,7,875.0,672,203.0,Card
+ORD0092,INV0092,2025-10-16,Rahul,Rice 5kg,Grocery,Hyderabad,7,2016.0,1925,91.0,Card
+ORD0093,INV0093,2025-04-04,Rahul,Toothpaste,Personal Care,Kukatpally,3,242.25,189,53.25,UPI
+ORD0094,INV0094,2025-06-17,Arjun,Shampoo 180ml,Personal Care,Miyapur,4,475.0,384,91.0,UPI
+ORD0095,INV0095,2025-02-11,Ramesh,Tea Powder 250g,Beverages,Hyderabad,7,945.0,756,189.0,Card
+ORD0096,INV0096,2025-04-25,Priya,Chips Pack,Snacks,Hyderabad,1,20.0,12,8.0,Cash
+ORD0097,INV0097,2025-03-20,Anjali,Wheat Flour 5kg,Grocery,Secunderabad,4,840.0,720,120.0,UPI
+ORD0098,INV0098,2025-04-22,Ramesh,Curd 500g,Dairy,Kukatpally,2,68.4,58,10.4,UPI
+ORD0099,INV0099,2025-06-09,Priya,Sugar 1kg,Grocery,Bowenpally,2,96.0,82,14.0,Cash
+ORD0100,INV0100,2025-07-12,Divya,Eggs 12 Pack,Dairy,Secunderabad,5,351.0,325,26.0,Cash
+ORD0101,INV0101,2025-06-04,Kiran,Milk 1L,Dairy,Hyderabad,4,248.0,204,44.0,Card
+ORD0102,INV0102,2025-09-30,Divya,Tea Powder 250g,Beverages,Kukatpally,1,135.0,108,27.0,Cash
+ORD0103,INV0103,2025-08-04,Ramesh,Chips Pack,Snacks,Hyderabad,6,120.0,72,48.0,UPI
+ORD0104,INV0104,2025-08-11,Suresh,Shampoo 180ml,Personal Care,Bowenpally,8,1000.0,768,232.0,Card
+ORD0105,INV0105,2025-08-12,Kiran,Bath Soap,Personal Care,Kukatpally,8,288.8,216,72.8,UPI
+ORD0106,INV0106,2025-05-23,Ramesh,Coffee 100g,Beverages,Secunderabad,4,380.0,296,84.0,UPI
+ORD0107,INV0107,2025-01-15,Ramesh,Milk 1L,Dairy,Kukatpally,7,434.0,357,77.0,Cash
+ORD0108,INV0108,2025-05-13,Arjun,Biscuits Pack,Snacks,Kukatpally,4,80.0,52,28.0,Card
+ORD0109,INV0109,2025-01-06,Sneha,Detergent 1kg,Household,Secunderabad,5,517.5,440,77.5,Cash
+ORD0110,INV0110,2025-10-12,Anjali,Wheat Flour 5kg,Grocery,Miyapur,7,1396.5,1260,136.5,Card
+ORD0111,INV0111,2025-01-09,Priya,Detergent 1kg,Household,Kukatpally,8,874.0,704,170.0,Cash
+ORD0112,INV0112,2025-10-25,Arjun,Toothpaste,Personal Care,Miyapur,4,340.0,252,88.0,Card
+ORD0113,INV0113,2025-10-09,Arjun,Chips Pack,Snacks,Kukatpally,6,114.0,72,42.0,Card
+ORD0114,INV0114,2025-05-09,Anjali,Biscuits Pack,Snacks,Hyderabad,5,100.0,65,35.0,Card
+ORD0115,INV0115,2025-10-02,Suresh,Wheat Flour 5kg,Grocery,Secunderabad,6,1260.0,1080,180.0,Cash
+ORD0116,INV0116,2025-09-26,Kiran,Detergent 1kg,Household,Kukatpally,8,920.0,704,216.0,Cash
+ORD0117,INV0117,2025-04-27,Arjun,Coffee 100g,Beverages,Secunderabad,4,380.0,296,84.0,UPI
+ORD0118,INV0118,2025-01-24,Rahul,Rice 5kg,Grocery,Bowenpally,3,960.0,825,135.0,UPI
+ORD0119,INV0119,2025-02-22,Rahul,Detergent 1kg,Household,Bowenpally,3,327.75,264,63.75,UPI
+ORD0120,INV0120,2025-06-24,Suresh,Biscuits Pack,Snacks,Hyderabad,8,152.0,104,48.0,UPI
+ORD0121,INV0121,2025-02-03,Divya,Coffee 100g,Beverages,Miyapur,8,760.0,592,168.0,Cash
+ORD0122,INV0122,2025-03-18,Kiran,Milk 1L,Dairy,Kukatpally,1,62.0,51,11.0,Cash
+ORD0123,INV0123,2025-08-02,Kiran,Wheat Flour 5kg,Grocery,Bowenpally,2,378.0,360,18.0,Card
+ORD0124,INV0124,2025-08-15,Kavya,Wheat Flour 5kg,Grocery,Bowenpally,7,1396.5,1260,136.5,UPI
+ORD0125,INV0125,2025-02-20,Anjali,Bath Soap,Personal Care,Secunderabad,1,34.2,27,7.2,UPI
+ORD0126,INV0126,2025-05-03,Suresh,Curd 500g,Dairy,Bowenpally,2,76.0,58,18.0,Cash
+ORD0127,INV0127,2025-08-19,Kiran,Sugar 1kg,Grocery,Miyapur,1,45.6,41,4.6,UPI
+ORD0128,INV0128,2025-05-25,Ramesh,Rice 5kg,Grocery,Hyderabad,4,1280.0,1100,180.0,Card
+ORD0129,INV0129,2025-04-12,Divya,Wheat Flour 5kg,Grocery,Hyderabad,5,945.0,900,45.0,Card
+ORD0130,INV0130,2025-03-14,Priya,Wheat Flour 5kg,Grocery,Hyderabad,3,630.0,540,90.0,Cash
+ORD0131,INV0131,2025-10-19,Kavya,Tea Powder 250g,Beverages,Miyapur,5,607.5,540,67.5,Cash
+ORD0132,INV0132,2025-05-20,Sneha,Biscuits Pack,Snacks,Bowenpally,5,95.0,65,30.0,UPI
+ORD0133,INV0133,2025-01-21,Divya,Biscuits Pack,Snacks,Kukatpally,2,36.0,26,10.0,Card
+ORD0134,INV0134,2025-04-28,Kiran,Bath Soap,Personal Care,Bowenpally,1,38.0,27,11.0,Cash
+ORD0135,INV0135,2025-01-21,Suresh,Tea Powder 250g,Beverages,Miyapur,5,607.5,540,67.5,Card
+ORD0136,INV0136,2025-04-03,Kiran,Curd 500g,Dairy,Miyapur,8,304.0,232,72.0,Card
+ORD0137,INV0137,2025-08-29,Arjun,Coffee 100g,Beverages,Miyapur,8,760.0,592,168.0,UPI
+ORD0138,INV0138,2025-06-18,Divya,Shampoo 180ml,Personal Care,Miyapur,2,250.0,192,58.0,UPI
+ORD0139,INV0139,2025-01-19,Ramesh,Curd 500g,Dairy,Hyderabad,7,239.4,203,36.4,UPI
+ORD0140,INV0140,2025-07-26,Sneha,Bath Soap,Personal Care,Hyderabad,6,228.0,162,66.0,Card
+ORD0141,INV0141,2025-01-28,Anjali,Coffee 100g,Beverages,Bowenpally,8,722.0,592,130.0,UPI
+ORD0142,INV0142,2025-01-27,Anjali,Milk 1L,Dairy,Kukatpally,8,471.2,408,63.2,Card
+ORD0143,INV0143,2025-09-06,Priya,Sugar 1kg,Grocery,Hyderabad,5,228.0,205,23.0,Card
+ORD0144,INV0144,2025-06-09,Sneha,Milk 1L,Dairy,Hyderabad,4,248.0,204,44.0,Card
+ORD0145,INV0145,2025-02-28,Ramesh,Toothpaste,Personal Care,Hyderabad,2,170.0,126,44.0,Card
+ORD0146,INV0146,2025-05-30,Sneha,Coffee 100g,Beverages,Kukatpally,3,270.75,222,48.75,UPI
+ORD0147,INV0147,2025-05-05,Ramesh,Coffee 100g,Beverages,Bowenpally,8,722.0,592,130.0,Cash
+ORD0148,INV0148,2025-09-18,Suresh,Toothpaste,Personal Care,Hyderabad,4,306.0,252,54.0,UPI
+ORD0149,INV0149,2025-09-17,Kavya,Tea Powder 250g,Beverages,Hyderabad,7,945.0,756,189.0,UPI
+ORD0150,INV0150,2025-10-24,Ramesh,Detergent 1kg,Household,Secunderabad,5,517.5,440,77.5,UPI

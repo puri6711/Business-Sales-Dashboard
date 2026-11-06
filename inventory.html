@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management | Business Analytics</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <h2>📊 Business Analytics</h2>
+    <div>
+        <a href="/">Dashboard</a>
+        <a href="/upload">Upload</a>
+        <a href="/forecasting">Forecasting</a>
+        <a href="/inventory">Inventory</a>
+        <a href="/payments">Payments</a>
+        <a href="/invoices">Invoices</a>
+        <a href="/reports">Reports</a>
+    </div>
+</nav>
+
+<main class="container">
+
+    <div class="page-header">
+        <div>
+            <h1>Inventory Management</h1>
+            <p>Monitor product stock, quantities and sales performance.</p>
+        </div>
+    </div>
+
+    <section class="cards">
+
+        <div class="card">
+            <h3>Total Products</h3>
+            <h2 id="totalProducts">0</h2>
+        </div>
+
+        <div class="card">
+            <h3>Total Quantity</h3>
+            <h2 id="totalQuantity">0</h2>
+        </div>
+
+        <div class="card">
+            <h3>Total Sales</h3>
+            <h2 id="totalSales">₹0</h2>
+        </div>
+
+    </section>
+
+    <section class="chart-container">
+        <h2>Product Inventory Details</h2>
+
+        <p id="message" class="message"></p>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Category</th>
+                        <th>Total Quantity</th>
+                        <th>Total Sales</th>
+                        <th>Stock Status</th>
+                    </tr>
+                </thead>
+
+                <tbody id="inventoryTable">
+                    <tr>
+                        <td colspan="5">Loading inventory details...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>Business Sales Dashboard Analysis System</p>
+</footer>
+
+<script>
+async function loadInventory() {
+    const table = document.getElementById("inventoryTable");
+    const message = document.getElementById("message");
+
+    try {
+        const response = await fetch("/inventory-data");
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.error || "Unable to load inventory data.");
+        }
+
+        document.getElementById("totalProducts").textContent =
+            data.total_products ?? 0;
+
+        document.getElementById("totalQuantity").textContent =
+            Number(data.total_quantity || 0).toLocaleString("en-IN");
+
+        document.getElementById("totalSales").textContent =
+            "₹" + Number(data.total_sales || 0).toLocaleString("en-IN", {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            });
+
+        table.innerHTML = "";
+
+        if (!data.products || data.products.length === 0) {
+            table.innerHTML =
+                '<tr><td colspan="5">No inventory records found.</td></tr>';
+            return;
+        }
+
+        data.products.forEach(product => {
+            const row = document.createElement("tr");
+
+            const values = [
+                product.product_name,
+                product.category,
+                Number(product.total_quantity || 0).toLocaleString("en-IN"),
+                "₹" + Number(product.total_sales || 0).toLocaleString("en-IN", {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2
+                }),
+                product.status
+            ];
+
+            values.forEach(value => {
+                const cell = document.createElement("td");
+                cell.textContent = value ?? "-";
+                row.appendChild(cell);
+            });
+
+            table.appendChild(row);
+        });
+
+    } catch (error) {
+        table.innerHTML =
+            '<tr><td colspan="5">Unable to load inventory details.</td></tr>';
+        message.textContent = error.message;
+    }
+}
+
+loadInventory();
+</script>
+
+</body>
+</html>
